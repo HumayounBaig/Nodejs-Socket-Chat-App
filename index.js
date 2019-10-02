@@ -15,17 +15,17 @@ const server = app.listen(4000, ()=> console.log("Listening at http://localhost:
 const io = socket(server);
 
 io.on('connection', socket =>{
-    // console.log("Connected on Socket with ID: "+socket.id);
+    console.log("Connected on Socket with ID: "+socket.id);
     socket.on('chat-message', function(data){
-        // console.log(data)
+        console.log(data)
         io.sockets.emit('chat-message',data);
     })
     socket.on('typing', username => {
-        // console.log(username);
+        console.log(username);
         socket.broadcast.emit('typing', username);
     })
      socket.on('image', function(info) {
-        // console.log(info);
+        console.log(info);
 
         socket.emit('image', { username: info.username , buffer: info.buffer});
     })
