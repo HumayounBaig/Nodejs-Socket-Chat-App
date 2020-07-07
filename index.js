@@ -2,9 +2,9 @@ const express = require('express');
 const socket = require('socket.io');
 const cors = require('cors');
 const app = express();
-const SocketIOFile = require('socket.io-file');
+// const SocketIOFile = require('socket.io-file');
 const http = require('http');
-const httpServer = http.Server(app);
+// const httpServer = http.Server(app);
 
 require("google-closure-library");
 goog.require('goog.crypt.base64');
